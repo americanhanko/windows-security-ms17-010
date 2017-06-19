@@ -19,7 +19,7 @@ control 'ms17-010-security-update' do
                         '10.0.10586'.to_sym => /KB4022714/, # Windows 10 (1511)
                         '10.0.10240'.to_sym => /KB4022727/, # Windows 10
                         '6.3.9600'.to_sym => /KB4022726/, # Windows Server 2012 R2, Windows 8.1
-                        '6.2.9200'.to_sym => /KB4012217/, # Windows Server 2012; Windows 8
+                        '6.2.9200'.to_sym => /KB4022724/, # Windows Server 2012; Windows 8
                         '6.1.7601'.to_sym => /KB4022719/, # Windows Server 2008 R2 (SP1); Windows 7 (SP1)
                         '6.1.7600'.to_sym => //, # Windows Server 2008 R2; Windows 7
                         '6.0.6002'.to_sym => /KB4012598/, # Windows Server 2008 (SP2);	Windows Vista (SP2)
