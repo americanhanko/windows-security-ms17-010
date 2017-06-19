@@ -5,7 +5,7 @@ title 'MS17-010: Security update for Windows SMB Server: March 14, 2017'
 
 control 'ms17-010-security-update' do
   impact 1.0
-  title 'Security update for Windows SMB Server'
+  title 'Update for Windows SMB Server should exist'
 
   desc 'This security update resolves vulnerabilities in Microsoft Windows.
         The most severe of the vulnerabilities could allow remote code
