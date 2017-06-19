@@ -36,6 +36,7 @@ control 'smb-registry-key-check' do
   desc 'All Windows Shares are Configured to disable the SMB1 protocol'
   impact 1.0
   describe registry_key('HKLM\System\CurrentControlSet\Services\LanManServer\Parameters') do
+    before { skip if os_env('LEGACY_SMB').content == 'enabled' }
     it { should exist }
     its('SMB1') { should eq 0 }
   end
