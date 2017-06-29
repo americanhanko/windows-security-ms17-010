@@ -43,6 +43,7 @@ end
 
 
 control 'ms17-010-anti-virus-signature-version' do
+  title 'Antivirus definitions are up-to-date'
   impact 1.0
   desc 'This checks to make sure the installed virus definitions are 1.247.197.0 or higher'
   describe powershell('Get-MpComputerStatus | Select AntivirusSignatureVersion') do

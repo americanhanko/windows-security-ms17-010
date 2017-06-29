@@ -4,4 +4,4 @@ maintainer: ApexInfra <apxlab@microsoft.com>
 copyright: Microsoft, Inc.
 license: MIT
 summary: Detect a host's patch status and registry entry for SMBv1
-version: 0.3
+version: 0.4.1
