@@ -4,13 +4,12 @@
 title 'MS17-010: Security update for Windows SMB Server: March 14, 2017'
 
 control 'ms17-010-security-update' do
-  impact 1.0
   title 'Update for Windows SMB Server should exist'
-
   desc 'This security update resolves vulnerabilities in Microsoft Windows.
         The most severe of the vulnerabilities could allow remote code
         execution if an attacker sends specially crafted messages to a
         Microsoft Server Message Block 1.0 (SMBv1) server.'
+  impact 1.0
 
   os_version = powershell('(Get-WmiObject -Class Win32_OperatingSystem).Version').strip.to_sym
 
@@ -39,5 +38,14 @@ control 'smb-registry-key-check' do
     before { skip if os_env('LEGACY_SMB').content == 'enabled' }
     it { should exist }
     its('SMB1') { should eq 0 }
+  end
+end
+
+
+control 'ms17-010-anti-virus-signature-version' do
+  impact 1.0
+  desc 'This checks to make sure the installed virus definitions are 1.247.197.0 or higher'
+  describe powershell('Get-MpComputerStatus | Select AntivirusSignatureVersion') do
+    its('stdout') { should match(/1\.247\.(19[7-9]|2[0-9][0-9])\.0/)}
   end
 end
